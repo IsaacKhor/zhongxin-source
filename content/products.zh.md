@@ -9,13 +9,17 @@ menu = "main"
 
 ![](/img/black-clay.png)
 
-- A
-- B
-- C
+- 铝, 33%
+- 钙, 铁, 钾, 钛 > 1%
+- 烧失 > 10%
 
 ## 粘土
 
 ![](/img/clay.png)
+
+- A
+- B
+- C
 
 ## 高岭土
 
