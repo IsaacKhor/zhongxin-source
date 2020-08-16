@@ -1,0 +1,33 @@
+<nav>
+  <label for="drop" class="toggle">
+    <i class="fas fa-bars u-pull-right" aria-hidden="true"></i>
+    <span><i class="fas fa-fire" aria-hidden="true"></i> {{ .Site.Title }} </span>
+  </label>
+  <input type="checkbox" id="drop" />
+  <ul class="menu">
+    <li>
+      <a class="navbar__titlebox" href="{{ .Site.BaseURL }}">
+        <img class="navbar__logo" src="/img/logo.png" />
+        <div class="navbar__title"><i class="fas fa-fire" aria-hidden="true"></i> {{ .Site.Title }} </div>
+      </a>
+    </li>
+    {{ range .Site.Menus.main }}
+    <li class="u-pull-right">
+        <a href="{{ .URL | absLangURL }}" class="Members">
+            <span>{{ .Pre }} {{ .Name }}</span>
+        </a>
+    </li>
+    {{ end }}
+    <li class="navbar__translations">
+      {{ range .Translations }}
+      <a class="navbar__translationitem" href="{{ .RelPermalink }}">
+        {{ if eq .Site.Language.Lang "en" }}
+        &#x1F1EC;&#x1F1E7; English
+        {{ else }}
+        🇨🇳 中文
+        {{ end }}
+      </a>
+      {{ end }}
+    </li>
+  </ul>
+</nav>

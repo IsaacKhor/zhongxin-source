@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>{{ .Title }}</title>
+  <link rel='canonical' href='{{ .Permalink }}'>
+  <link rel='icon' href='{{ ( or .Site.Params.assets.favicon "favicon.ico" ) | relURL }}'>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i">
+  <link rel="stylesheet" type="text/css" href="/res/normalize.min.css">
+  <link rel="stylesheet" type="text/css" href="/res/custom.css">
+</head>
+
+<body>
+  <a href="#main" id="reader-text">Skip to content</a>
+  <nav class="navbar">
+    <h1 class="navbar__sitename">
+      <a class="navbar__title" href="/">{{ .Site.Title }}</a>
+    </h1>
+    <ul class="navbar__menu">
+      {{ range .Site.Menus.main }}
+      <li class="navbar_item">
+        <a href="{{ .URL }}">{{ .Name }}</a>
+      </li>
+      {{ end }}
+    </ul>
+    <ul class="navbar__translations">
+      {{ range .Translations }}
+      <li class="navbar_translations">
+
+      </li>
+      {{ end }}
+    </ul>
+  </nav>
+
+</body>
+</html>

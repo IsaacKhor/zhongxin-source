@@ -1,0 +1,13 @@
+baseURL = "https://www.zhongxinindustrial.com/"
+languageCode = "zh-CN"
+buildDrafts = false
+enableRobotsTXT = true
+pygmentsCodefences = true
+
+defaultContentLanguage = "zh"
+
+[languages]
+  [languages.en]
+    title = "Zhong Xin Industrial Ltd."
+  [languages.zh]
+    title = "中信实业有限公司"

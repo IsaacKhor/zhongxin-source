@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{{ if .Page.Title }}{{ .Page.Title }} - {{ end }}{{ .Site.Title }}</title>
+  <meta name="description"
+  content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+
+  {{ with .Site.Params.author }}
+  <meta name="author" content="{{ . }}">
+  {{ end }}
+
+  <link rel='canonical' href='{{ .Permalink }}'>
+  <link rel='icon' href='{{ ( or .Site.Params.assets.favicon "favicon.ico" ) | relURL }}'>
+  <link rel="stylesheet" href="/css/normalize.min.css">
+  <link rel="stylesheet" href="/css/skeleton.css">
+  <link rel="stylesheet" href="/css/sugoi-base.css">
+  <link rel="stylesheet" href="/css/custom.css">
+</head>
+<body>
+  <a href="#main" class="reader-text">Skip to content</a>
+  {{- partial "header.html" . -}}
+    {{- block "main" . }}{{- end }}
+  {{- partial "footer.html" . -}}
+</body>
+</html>

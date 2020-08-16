@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+  <nav class="navbar">
+    <div class="navbar__titlerow">
+      <a class="navbar__ident" href="/">
+        <img class="navbar__logo" src="/res/logo.png" />
+        <h2 class="navbar__title">{{ .Site.Title }}</h2>
+      </a>
+      <div class="navbar__translations">
+        {{ range .Translations }}
+        <a class="navbar__translationitem" href="{{ .RelPermalink }}">
+          {{ if eq .Site.Language.Lang "en" }}
+          &#x1F1EC;&#x1F1E7; English
+          {{ else }}
+          🇨🇳 中文
+          {{ end }}
+        </a>
+        {{ end }}
+      </div>
+    </div>
+    <div class="navbar__menu">
+      {{ range .Site.Menus.main }}
+      <div class="navbar__item">
+        <a href="{{ .URL }}">{{ .Name }}</a>
+      </div>
+      {{ end }}
+    </div>
+  </nav>
