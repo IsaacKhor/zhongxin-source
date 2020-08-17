@@ -1,11 +1,10 @@
 [[redirects]]
   from = "/"
-  to = "/about/"
-  status = 307
-  conditions = {Language=["zh"]}
-
-[[redirects]]
-  from = "/"
   to = "/en/about/"
   status = 307
   conditions = {Language=["en"]}
+
+[[redirects]]
+  from = "/"
+  to = "/about/"
+  status = 307
